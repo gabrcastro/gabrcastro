@@ -8,3 +8,8 @@ export enum urls {
   GTIHUB = "https://github.com/gabrcastro",
   X = "https://x.com/ga_brielcastro",
 }
+
+export enum projectUrls {
+  MOPOX = "https://mopox.vercel.app/",
+  PLANNER = "https://planner-two-mauve.vercel.app/",
+}

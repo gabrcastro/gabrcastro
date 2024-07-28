@@ -1,12 +1,9 @@
+"use client";
+
+import { useMobile } from "@/app/hooks/use_mobile";
 import { urls } from "@/utils/urls";
-import {
-  DiscIcon,
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "lucide-react";
-import Image from "next/image";
+import clsx from "clsx";
+import { GithubIcon, LinkedinIcon, YoutubeIcon } from "lucide-react";
 
 type SocialLi = {
   icon: React.ReactNode;
@@ -45,8 +42,15 @@ export function Social() {
     },
   ];
 
+  const isMobile = useMobile();
+  console.log(isMobile);
   return (
-    <ul className="w-min h-min flex  flex-row md:flex-col lg:flex-col item-center justify-center gap-5">
+    <ul
+      className={clsx(
+        isMobile ? "flex-row" : "flex-col",
+        "w-min h-min flex item-center justify-center gap-5"
+      )}
+    >
       {links.map((link) => (
         <li key={link.link + link.icon}>
           <a href={link.link} target="_blank">

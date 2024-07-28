@@ -3,12 +3,17 @@
 import Image from "next/image";
 import { LinkButton } from "@/components/link_button.component";
 import { ArrowDownRight } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import clsx from "clsx";
-import { FooterComponent } from "@/components/footer.component";
+import { useMobile } from "./hooks/use_mobile";
+import { FooterSocial } from "@/components/footer_social.component";
+import { useMenuStore } from "./state/menu.store";
 type TechsType = { svg: React.ReactNode; text: string };
 
 export default function Home() {
+  const isMobile = useMobile();
+  const { setIsOpen } = useMenuStore((state) => state);
+
   const techs: TechsType[] = [
     {
       svg: (
@@ -204,10 +209,116 @@ export default function Home() {
     },
   ];
 
+  useEffect(() => {
+    if (!isMobile) {
+      setIsOpen(false);
+    }
+  }, [isMobile, setIsOpen]);
+
   return (
-    <div className="flex flex-col items-center lg:items-start justify-between w-full h-full overflow-y-auto">
-      <div className="relative flex flex-col items-center md:flex-row lg:flex-row justify-between w-full">
-        <div className="left-0 top-0 ml-0 md:ml-20 lg:ml-32 mt-20">
+    <div
+      className={clsx(
+        isMobile ? "justify-start" : "justify-between",
+        "flex flex-col items-center lg:items-start w-full h-full overflow-y-auto"
+      )}
+    >
+      <div
+        className={clsx(
+          isMobile ? "justify-start" : "justify-between",
+          "flex flex-col items-center lg:items-start w-full h-full overflow-y-auto"
+        )}
+      >
+        <div className="relative flex flex-col items-center md:flex-row lg:flex-row justify-between w-full">
+          <div
+            className={clsx(
+              isMobile && "px-5",
+              "left-0 top-0 ml-0 md:ml-20 lg:ml-40 mt-20"
+            )}
+          >
+            <h1 className="text-zinc-700 text-xs md:text-lg font-light ml-1 mb-2">
+              Olá, eu sou
+            </h1>
+            <h1 className="text-zinc-700 text-3xl md:text-4xl lg:text-5xl font-bold">
+              Gabriel Castro
+            </h1>
+
+            <p
+              className={
+                "mt-4 text-zinc-700 text-sm font-light text-start ml-1"
+              }
+            >
+              Sou um Engenheiro de Software, especializado{" "}
+              {!isMobile && <br className="block xl:hidden" />}
+              em Front-End
+              {!isMobile && <br className="hidden xl:block" />} com mais de 3+
+              de experiência.
+            </p>
+
+            <LinkButton
+              url={"https://www.linkedin.com/in/gabrielsouzacastro/"}
+              text="Entre em contato"
+              classes="mt-5"
+            />
+          </div>
+
+          <div className={"relative mr-10 ml-40 md:ml-0 lg:mr-10 mt-10 "}>
+            <div className="z-50 absolute left-0 bottom-0 mb-14 -ml-28 rounded-xl px-5 py-3 bg-white flex items-center gap-2 shadow-xl">
+              <span
+                className={clsx(
+                  "bg-gradient-to-r from-secondary to-primary inline-block text-transparent bg-clip-text text-xl md:text-3xl font-bold"
+                )}
+              >
+                3+
+              </span>
+              <span className="text-zinc-800 text-xs md:text-base font-light">
+                Experiência
+              </span>
+            </div>
+
+            <Image
+              src={"/images/gabrcastro_light.png"}
+              alt="Person"
+              width={1000}
+              height={1000}
+              className="w-52 lg:w-80 xl:w-80 xl:mr-36"
+            />
+          </div>
+        </div>
+
+        <div className="ml-0 lg:ml-40 w-[80%] lg:w-[50%] mb-20 mt-20">
+          <span className="flex flex-row gap-3 text-sm text-zinc-700 font-light">
+            Eu tenho experiência com as seguintes tecnologias
+            <ArrowDownRight className="text-zinc-700 size-5" />
+          </span>
+
+          <div className="flex flex-wrap justify-between md:justify-start gap-3 mt-7 md:mt-5">
+            {techs.map((tech) => (
+              <div
+                key={tech.text + 1}
+                className={clsx(
+                  "flex flex-row gap-2 text-zinc-800 text-sm font-light items-center justify-center"
+                )}
+              >
+                {tech.svg}
+                {tech.text}
+              </div>
+            ))}
+          </div>
+        </div>
+        {isMobile && (
+          <div className="flex flex-col items-center justify-center mt-4 mb-6 pt-4 border-t-[.5px] border-t-zinc-200 w-full bottom-0">
+            <FooterSocial />
+          </div>
+        )}
+      </div>
+
+      {/* <div className="relative flex flex-col items-center md:flex-row lg:flex-row justify-between w-full">
+        <div
+          className={clsx(
+            isMobile && "px-5",
+            "left-0 top-0 ml-0 md:ml-20 lg:ml-40 mt-20"
+          )}
+        >
           <h1 className="text-zinc-700 text-xs md:text-lg font-light ml-1 mb-2">
             Olá, eu sou
           </h1>
@@ -215,11 +326,13 @@ export default function Home() {
             Gabriel Castro
           </h1>
 
-          <p className="mt-4 text-zinc-700 text-sm font-light text-start ml-1">
+          <p
+            className={"mt-4 text-zinc-700 text-sm font-light text-start ml-1"}
+          >
             Sou um Engenheiro de Software, especializado{" "}
-            <br className="block md:hidden lg:hidden" />
+            {!isMobile && <br className="block xl:hidden" />}
             em Front-End
-            <br className="hidden md:hidden lg:block" /> com mais de 3+ de
+            {!isMobile && <br className="hidden xl:block" />} com mais de 3+ de
             experiência.
           </p>
 
@@ -232,10 +345,14 @@ export default function Home() {
 
         <div className={"relative mr-10 ml-40 md:ml-0 lg:mr-10 mt-10 "}>
           <div className="z-50 absolute left-0 bottom-0 mb-14 -ml-28 rounded-xl px-5 py-3 bg-white flex items-center gap-2 shadow-xl">
-            <span className="bg-gradient-to-r from-secondary to-primary inline-block text-transparent bg-clip-text text-3xl font-bold">
+            <span
+              className={clsx(
+                "bg-gradient-to-r from-secondary to-primary inline-block text-transparent bg-clip-text text-xl md:text-3xl font-bold"
+              )}
+            >
               3+
             </span>
-            <span className="text-zinc-800 text-base font-light">
+            <span className="text-zinc-800 text-xs md:text-base font-light">
               Experiência
             </span>
           </div>
@@ -245,18 +362,18 @@ export default function Home() {
             alt="Person"
             width={1000}
             height={1000}
-            className="w-56 lg:w-80 md:w-80 lg:mr-20"
+            className="w-52 lg:w-80 xl:w-80 xl:mr-36"
           />
         </div>
       </div>
 
-      <div className="ml-0 lg:ml-32 w-[80%] lg:w-[50%] mb-20 mt-20 md:mt-0">
+      <div className="ml-0 lg:ml-40 w-[80%] lg:w-[50%] mb-20 mt-20">
         <span className="flex flex-row gap-3 text-sm text-zinc-700 font-light">
           Eu tenho experiência com as seguintes tecnologias
           <ArrowDownRight className="text-zinc-700 size-5" />
         </span>
 
-        <div className="flex flex-wrap gap-3 mt-5">
+        <div className="flex flex-wrap justify-between md:justify-start gap-3 mt-7 md:mt-5">
           {techs.map((tech) => (
             <div
               key={tech.text + 1}
@@ -270,6 +387,11 @@ export default function Home() {
           ))}
         </div>
       </div>
+      {isMobile && (
+        <div className="flex flex-col items-center justify-center mt-4 mb-6 pt-4 border-t-[.5px] border-t-zinc-200 w-full bottom-0">
+          <FooterSocial />
+        </div>
+      )} */}
     </div>
   );
 }

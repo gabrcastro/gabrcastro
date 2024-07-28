@@ -20,9 +20,9 @@ export default function Projects() {
         Projects
       </h1>
 
-      <div className="flex flex-row items-start mt-10 mb-32 px-32 justify-center flex-wrap gap-4 w-full h-full overflow-y-auto">
+      <div className="flex flex-row items-start mt-10 mb-0 md:mb-32 px-0 md:px-32 justify-center flex-wrap gap-4 w-full h-full overflow-y-auto">
         {projects.map((project) => (
-          <div key={project.link}>
+          <div key={project.link} className="py-2 md:py-0 last:mb-32">
             <CardComponent>
               <Image
                 src={project.image}

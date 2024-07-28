@@ -18,7 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-bodyBackground">
+    <html
+      lang="en"
+      className="bg-bodyBackground overflow-x-hidden overflow-y-hidden"
+    >
       <body className={inter.className}>
         <main className="relative flex min-h-screen min-w-screen h-screen w-screen flex-col items-center">
           <Header />

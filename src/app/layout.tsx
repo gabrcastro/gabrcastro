@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "../components/header.component";
 import { Social } from "../components/social.component";
 import { FooterComponent } from "../components/footer.component";
+import { FooterSocial } from "@/components/footer_social.component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,11 +26,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <main className="relative flex min-h-screen min-w-screen h-screen w-screen flex-col items-center">
           <Header />
-          <div className="absolute bottom-0 left-0 ml-6 mb-10">
+          <div className="absolute bottom-0 left-0 ml-6 mb-10 hidden md:block">
             <Social />
           </div>
           {children}
-          <div className="absolute bottom-0 right-0 mb-6 mr-6">
+          <div className="absolute bottom-0 right-0 mb-6 mr-6 hidden md:block">
             <FooterComponent />
           </div>
         </main>

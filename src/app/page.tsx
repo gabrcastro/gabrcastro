@@ -205,17 +205,22 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col justify-between w-full h-full">
-      <div className="relative flex flex-row justify-between w-full">
-        <div className="left-0 top-0 ml-32 mt-20">
-          <h1 className="text-zinc-700 text-lg font-light ml-1 mb-2">
+    <div className="flex flex-col items-center lg:items-start justify-between w-full h-full overflow-y-auto">
+      <div className="relative flex flex-col items-center md:flex-row lg:flex-row justify-between w-full">
+        <div className="left-0 top-0 ml-0 md:ml-20 lg:ml-32 mt-20">
+          <h1 className="text-zinc-700 text-xs md:text-lg font-light ml-1 mb-2">
             Olá, eu sou
           </h1>
-          <h1 className="text-zinc-700 text-5xl font-bold">Gabriel Castro</h1>
+          <h1 className="text-zinc-700 text-3xl md:text-4xl lg:text-5xl font-bold">
+            Gabriel Castro
+          </h1>
 
           <p className="mt-4 text-zinc-700 text-sm font-light text-start ml-1">
-            Sou um Engenheiro de Software, especializado em Front-End
-            <br /> com mais de 3+ de experiência.
+            Sou um Engenheiro de Software, especializado{" "}
+            <br className="block md:hidden lg:hidden" />
+            em Front-End
+            <br className="hidden md:hidden lg:block" /> com mais de 3+ de
+            experiência.
           </p>
 
           <LinkButton
@@ -225,7 +230,7 @@ export default function Home() {
           />
         </div>
 
-        <div className={"relative mr-24 mt-10 "}>
+        <div className={"relative mr-10 ml-40 md:ml-0 lg:mr-10 mt-10 "}>
           <div className="z-50 absolute left-0 bottom-0 mb-14 -ml-28 rounded-xl px-5 py-3 bg-white flex items-center gap-2 shadow-xl">
             <span className="bg-gradient-to-r from-secondary to-primary inline-block text-transparent bg-clip-text text-3xl font-bold">
               3+
@@ -240,12 +245,12 @@ export default function Home() {
             alt="Person"
             width={1000}
             height={1000}
-            className="w-80"
+            className="w-56 lg:w-80 md:w-80 lg:mr-20"
           />
         </div>
       </div>
 
-      <div className="ml-32 w-[50%] mb-20 ">
+      <div className="ml-0 lg:ml-32 w-[80%] lg:w-[50%] mb-20 mt-20 md:mt-0">
         <span className="flex flex-row gap-3 text-sm text-zinc-700 font-light">
           Eu tenho experiência com as seguintes tecnologias
           <ArrowDownRight className="text-zinc-700 size-5" />

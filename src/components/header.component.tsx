@@ -24,8 +24,11 @@ export function Header() {
   ];
 
   return (
-    <div className="relative w-full h-min flex item-center justify-center">
-      <a href="/" className="absolute left-0 top-0 ml-6 mt-6">
+    <div className="relative w-full h-min flex item-center justify-start md:justify-center ">
+      <a
+        href="/"
+        className="block md:absolute left-0 top-0 ml-6 mt-6 mb-4 md:mb-4"
+      >
         <Image
           src={"logo.svg"}
           alt="Gabriel Castro Logo"
@@ -34,7 +37,7 @@ export function Header() {
         />
       </a>
 
-      <ul className="flex gap-7 px-6 py-3 mt-2 rounded-b-3xl min-h-11">
+      <ul className=" gap-7 px-6 py-3 mt-2 rounded-b-3xl min-h-11 hidden md:flex">
         {links.map((link) => (
           <div
             key={link.route + link.title}

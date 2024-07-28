@@ -46,7 +46,7 @@ export function Social() {
   ];
 
   return (
-    <ul className="w-min h-min flex flex-col item-center justify-center gap-5">
+    <ul className="w-min h-min flex  flex-row md:flex-col lg:flex-col item-center justify-center gap-5">
       {links.map((link) => (
         <li key={link.link + link.icon}>
           <a href={link.link} target="_blank">

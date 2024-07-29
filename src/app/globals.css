@@ -8,3 +8,8 @@
   box-sizing: border-box;
   min-width: 0;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}

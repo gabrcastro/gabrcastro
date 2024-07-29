@@ -1,14 +1,11 @@
 "use client";
 
-import { useMobile } from "@/app/hooks/use_mobile";
-import { useMenuStore } from "@/app/state/menu.store";
+import { useMobile } from "@/hooks/use_mobile";
+import { useMenuStore } from "@/state/menu.store";
 import { urls } from "@/utils/urls";
-import clsx from "clsx";
-import { MenuIcon, X } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { FooterSocial } from "./footer_social.component";
+import { Social } from "./social.component";
 
 type HeaderLi = {
   title: string;
@@ -31,8 +28,8 @@ export function Header() {
 
   return (
     // <div className="w-full bg-white block md:fixed">
-    <nav className="relative w-full max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 transition-all duration-300">
-      <a href="/" className="absolute left-0 top-0 ml-6 mt-6 mb-4 md:mb-4">
+    <nav className="relative w-full flex items-center justify-between mx-auto py-4 px-10 transition-all duration-300 border-b-[.5px] border-b-zinc-300">
+      <a href="/" className="">
         <Image
           src={"logo.svg"}
           alt="Gabriel Castro Logo"
@@ -41,30 +38,9 @@ export function Header() {
           className="w-32 md:w-40"
         />
       </a>
-      {/* <button
-          type="button"
-          onClick={toggleMenu}
-          className="absolute right-0 top-0 inline-flex items-center justify-center p-2 w-10 h-10 text-sm rounded-lg mt-2 mr-4"
-        >
-          <MenuIcon className="size-6 text-zinc-800" />
-        </button> */}
-      <ul className="w-full h-full pt-16 md:py-4 flex flex-row gap-10 items-center justify-center">
-        {links.map((link) => (
-          <li
-            key={link.route + link.title}
-            className={clsx(
-              "hover:text-primary text-xs uppercase",
-              link.route === pathname
-                ? "font-bold text-primary"
-                : "text-zinc-900"
-            )}
-          >
-            <a href={link.route} onClick={toggleMenu}>
-              {link.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="hidden sm:block">
+        <Social />
+      </div>
     </nav>
     //   <div
     //     className={clsx(

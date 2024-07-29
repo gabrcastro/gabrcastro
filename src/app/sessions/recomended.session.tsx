@@ -41,12 +41,12 @@ export function Recomended() {
   ];
 
   return (
-    <div className="w-full flex flex-flow items-start justify-start mx-28 gap-10">
-      <div className=" w-[40%] flex flex-col items-start justify-center py-10 border-r-[.5px] border-r-zinc-300">
-        <h1 className="text-zinc-800 text-left text-2xl md:text-3xl font-bold">
+    <div className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start mx-4 lg:mx-28 gap-2 lg:gap-10">
+      <div className="w-[90%] lg:w-[40%] flex flex-col items-center lg:items-start justify-center py-10 border-r-[0px] lg:border-r-[.5px] border-r-transparent lg:border-r-zinc-200">
+        <h1 className="text-zinc-800 text-center lg:text-start text-2xl lg:text-3xl font-bold">
           Recomendações
         </h1>
-        <p className="text-zinc-600 text-sm font-light mt-5">
+        <p className="text-zinc-600 text-sm text-center lg:text-start font-light mt-5 mr-5">
           Aqui são algumas das recomendações que tenho como livros, cursos,
           canais. Conteúdo que eu consumo, consumi e acredito que possa servir
           muito bem para você.
@@ -56,18 +56,18 @@ export function Recomended() {
           alt=""
           width={1000}
           height={1000}
-          className="w-[90%] mt-5"
+          className="w-[90%] mt-0 lg:mt-5 hidden lg:block"
         />
       </div>
 
-      <div className="flex flex-col items-start justify-center py-10 ml-5 w-[40%]">
+      <div className="flex flex-col items-center lg:items-start justify-center pt-0 lg:pt-10 pb-10 ml-5 w-[90%] lg:w-[40%]">
         <h1 className="text-zinc-800 text-left text-base font-bold">Livros</h1>
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col items-center lg:items-start mt-4">
           {recomendations.map((item) => (
             <a
               key={item.link}
               href={item.link}
-              className="text-zinc-500 text-sm font-light hover:text-primary underline"
+              className="text-zinc-500 text-sm text-center lg:text-start font-light hover:text-primary underline"
             >
               {item.title}
             </a>

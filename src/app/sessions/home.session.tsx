@@ -14,7 +14,6 @@ import {
   RiTailwindCssFill,
 } from "react-icons/ri";
 import { SiFirebase, SiRedux, SiTypescript } from "react-icons/si";
-import { TbBrandTypescript } from "react-icons/tb";
 
 export function HomeSession() {
   const isMobile = useMobile();
@@ -81,13 +80,13 @@ export function HomeSession() {
 
   return (
     <div className="flex w-screen items-center justify-center">
-      <div className="w-full border-x-[.5px] border-x-zinc-200 mx-16">
+      <div className="w-full border-x-[.5px] border-x-zinc-200 mx-4 md:mx-16">
         <div
           className={
-            "flex flex-col items-center justify-start lg:items-start h-full mx-20"
+            "flex flex-col items-center justify-start lg:items-start h-full mx-5 md:mx-20"
           }
         >
-          <div className="relative w-full flex flex-col items-center justify-between md:flex-row">
+          <div className="relative w-full flex flex-col items-center justify-center md:justify-between md:flex-row">
             <div className={"ml-0 mt-20"}>
               <h1 className="text-zinc-700 text-xs md:text-lg font-light ml-1 mb-2">
                 Olá, eu sou
@@ -139,7 +138,7 @@ export function HomeSession() {
             </div>
           </div>
 
-          <div className=" w-[80%] lg:w-[70%] mb-20 mt-32">
+          <div className=" w-[90%] lg:w-[70%] mb-20 mt-32">
             <span className="flex flex-row gap-3 text-sm text-zinc-700 font-light">
               Eu tenho experiência com as seguintes tecnologias
               <FiArrowDownRight className="text-zinc-700 size-5" />

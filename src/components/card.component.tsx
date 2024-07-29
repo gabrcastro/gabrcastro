@@ -21,7 +21,6 @@ export function CardComponent({
       <div className="w-fit min-w-80 min-h-[22rem] h-min flex flex-col items-start justify-start">
         {children}
         <div className="relative flex flex-col items-start justify-start w-full px-2 mt-3">
-          <div className="absolute bottom-0 right-0"></div>
           <div className="flex flex-row items-start text-zinc-700 justify-between w-full">
             <span className="text-base font-bold ">{title}</span>
 

@@ -38,31 +38,9 @@ export function Header() {
           className="w-32 md:w-40"
         />
       </a>
-      {/* <button
-          type="button"
-          onClick={toggleMenu}
-          className="absolute right-0 top-0 inline-flex items-center justify-center p-2 w-10 h-10 text-sm rounded-lg mt-2 mr-4"
-        >
-          <MenuIcon className="size-6 text-zinc-800" />
-        </button> */}
-      {/* <ul className="w-full h-full pt-16 md:py-4 flex flex-row gap-10 items-center justify-center">
-        {links.map((link) => (
-          <li
-            key={link.route + link.title}
-            className={clsx(
-              "hover:text-primary text-xs uppercase",
-              link.route === pathname
-                ? "font-bold text-primary"
-                : "text-zinc-900"
-            )}
-          >
-            <a href={link.route} onClick={toggleMenu}>
-              {link.title}
-            </a>
-          </li>
-        ))}
-      </ul> */}
-      <Social />
+      <div className="hidden sm:block">
+        <Social />
+      </div>
     </nav>
     //   <div
     //     className={clsx(

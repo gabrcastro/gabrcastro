@@ -28,15 +28,14 @@ export function ProjectsSession() {
       {/* projects */}
       <div
         className={
-          "flex flex-col items-center justify-center pt-7 h-full w-full mx-16 border-x-[.5px] border-x-zinc-200 "
+          "flex flex-col items-center justify-center pt-7 h-full w-full mx-4 md:mx-16 border-x-[.5px] border-x-zinc-200 "
         }
       >
-        {/* <h1 className="bg-gradient-to-r from-primary to-secondary inline-block text-transparent bg-clip-text text-3xl md:text-4xl font-bold"> */}
         <h1 className="text-zinc-800 text-left text-2xl md:text-3xl font-bold">
           Projects
         </h1>
 
-        <p className="w-[60%] text-sm text-center mt-5">
+        <p className="w-[80%] sm:w-[60%] text-sm text-center mt-5">
           Aqui estão alguns dos meus projetos em desenvolvimento e também
           concluídos. Coloco aqui não apenas projetos web, como também
           aplicativos ou outros que considero importante.
@@ -56,7 +55,7 @@ export function ProjectsSession() {
                   alt=""
                   width={1000}
                   height={1000}
-                  className="w-[90%] md:w-full"
+                  className="w-full"
                 />
               </CardComponent>
             </div>

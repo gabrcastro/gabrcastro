@@ -1,9 +1,18 @@
 "use client";
 
-import { useMobile } from "@/app/hooks/use_mobile";
+import { useMobile } from "@/hooks/use_mobile";
 import { urls } from "@/utils/urls";
 import clsx from "clsx";
-import { GithubIcon, LinkedinIcon, YoutubeIcon } from "lucide-react";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { CiLinkedin } from "react-icons/ci";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaSquareXTwitter,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
 
 type SocialLi = {
   icon: React.ReactNode;
@@ -13,30 +22,20 @@ type SocialLi = {
 export function Social() {
   const links: SocialLi[] = [
     {
-      icon: (
-        <LinkedinIcon className="text-zinc-800 size-6 hover:text-primary" />
-      ),
+      icon: <FaLinkedin className="text-zinc-800 size-6 hover:text-primary" />,
       link: urls.LINKEDIN,
     },
     {
-      icon: <GithubIcon className="text-zinc-800 size-6 hover:text-primary" />,
+      icon: <FaGithub className="text-zinc-800 size-6 hover:text-primary" />,
       link: urls.GTIHUB,
     },
     {
-      icon: <YoutubeIcon className="text-zinc-800 size-6 hover:text-primary" />,
+      icon: <FaYoutube className="text-zinc-800 size-6 hover:text-primary" />,
       link: urls.YOUTUBE,
     },
     {
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 30 30"
-          width="33px"
-          height="30px"
-          className="fill-zinc-800 size-6 hover:fill-primary"
-        >
-          <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z" />
-        </svg>
+        <FaSquareXTwitter className="text-zinc-800 size-6 hover:text-primary" />
       ),
       link: urls.X,
     },
@@ -47,8 +46,7 @@ export function Social() {
   return (
     <ul
       className={clsx(
-        isMobile ? "flex-row" : "flex-col",
-        "w-min h-min flex item-center justify-center gap-5"
+        "flex-row w-min h-min flex item-center justify-center gap-5"
       )}
     >
       {links.map((link) => (

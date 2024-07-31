@@ -4,6 +4,7 @@ import { Header } from "../components/header.component";
 import { Social } from "../components/social.component";
 import { FooterComponent } from "../components/footer.component";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Gabriel Castro",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <main className="flex h-full flex-col items-center">
           <Header />
           <div>{children}</div>
+          <Analytics />
         </main>
       </body>
     </html>

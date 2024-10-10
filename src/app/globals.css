@@ -12,4 +12,6 @@
 html,
 body {
   overflow-x: hidden;
+  /* background-image: url("/gifs/bg.png"); */
+  font-family: "FontsFree-Net-Lastica", sans-serif;
 }

@@ -6,7 +6,12 @@ import { NextFont } from "next/dist/compiled/@next/font";
 export function HomePage(props: { font: NextFont }) {
   const lastica = props.font;
   return (
-    <main className="w-full h-full py-10 flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/backgrounds/bg.png')]">
+    <main className="relative w-full h-full py-10 flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/backgrounds/bg.png')]">
+      <iframe
+        className="absolute left-0 w-screen h-screen opacity-30"
+        src="https://lottie.host/embed/e24daa09-2076-46e5-843e-48c1241bf4ab/tJwxZcaWRb.json"
+      ></iframe>
+
       {/* MENU */}
       <motion.div
         initial={{ opacity: 0, y: 200, scale: 0 }}

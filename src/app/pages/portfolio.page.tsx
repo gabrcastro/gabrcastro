@@ -1,10 +1,38 @@
+"use client";
+
 import { Constants } from "@/utils/constants";
 import * as motion from "framer-motion/client";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
 export function PortolioPage(props: { font: NextFont }) {
   const lastica = props.font;
+
+  function openView(image: string) {
+    return (
+      <AlertDialog>
+        <AlertDialogTrigger>Open</AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          </AlertDialogHeader>
+        </AlertDialogContent>
+      </AlertDialog>
+    );
+  }
+
   return (
     <div className="w-full h-fullflex flex-col items-start">
       <motion.div
@@ -43,20 +71,39 @@ export function PortolioPage(props: { font: NextFont }) {
         {Constants.DEV_PROJECTS.map((item) => (
           <div
             key={item.url}
-            className="w-[48%] h-max border-2 border-zinc-500/25 hover:cursor-pointer hover:brightness-50 relative"
+            className="w-[30%] border-2 border-zinc-500/25 hover:cursor-pointer hover:brightness-50 relative"
           >
-            <Image src={item.thumb} alt="" width={1080} height={1080} />
+            <Image
+              src={item.thumb}
+              alt={item.title}
+              width={1080}
+              height={1080}
+              className="w-full min-h-[290px] max-h-[290px] bg-cover bg-no-repeat bg-center"
+            />
 
             <div className="absolute bottom-0 left-0 text-white text-3xl ml-5 mb-5 font-medium">
               {item.title}
             </div>
 
-            <button
-              type="button"
-              className="absolute bottom-0 right-0 text-white text-2xl mr-5 mb-5 font-medium bg-zinc-700 rounded-md p-2 border-[1px] border-zinc-500/50"
-            >
-              VIEW
-            </button>
+            <AlertDialog>
+              <AlertDialogTrigger className="text-white text-4xl">
+                VIEW
+              </AlertDialogTrigger>
+              <AlertDialogContent className="w-full min-w-[1080px] max-h-[700px] overflow-auto bg-zinc-900 border-none">
+                <AlertDialogHeader className="w-full flex items-end justify-end">
+                  <AlertDialogCancel className="w-min text-xl text-white font-medium bg-transparent">
+                    Fechar
+                  </AlertDialogCancel>
+                </AlertDialogHeader>
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={1080}
+                  height={1080}
+                  className="w-full h-full"
+                />
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
         ))}
       </div>

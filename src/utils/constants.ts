@@ -125,6 +125,12 @@ export class Constants {
     },
     {
       url: "/",
+      title: "EcoWaves",
+      thumb: "/images/projects/ecowaves.png",
+      image: "/images/projects/site/ecowaves.site.png",
+    },
+    {
+      url: "/",
       title: "Planner",
       thumb: "/images/projects/planner.png",
       image: "",

@@ -19,7 +19,7 @@ export function WorkflowPage(props: { font: NextFont }) {
         </h1>
       </motion.div>
 
-      <div className="flex flex-row gap-10 w-full items-center">
+      <div className="flex flex-row gap-10 w-full items-center relative">
         <motion.div
           initial={{ opacity: 0, x: 100, scale: 0 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -37,6 +37,14 @@ export function WorkflowPage(props: { font: NextFont }) {
             />
           </div>
         </motion.div>
+        {/* 
+        <Image
+          src={"/gifs/animation.gif"}
+          alt="Profile Picture"
+          width={150}
+          height={150}
+          className="absolute right-0 top-0 mt-20 mr-20"
+        /> */}
 
         <motion.div
           initial={{ opacity: 0, x: 100, scale: 0 }}
@@ -71,7 +79,7 @@ export function WorkflowPage(props: { font: NextFont }) {
         </motion.div>
       </div>
 
-      <div className="flex flex-row gap-10 w-full items-center -mt-56">
+      <div className="relative flex flex-row gap-10 w-full items-center -mt-56">
         <motion.div
           initial={{ opacity: 0, x: 100, scale: 0 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}

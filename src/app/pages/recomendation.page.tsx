@@ -6,7 +6,10 @@ import { Constants } from "@/utils/constants";
 export function RecomendationsPage(props: { font: NextFont }) {
   const lastica = props.font;
   return (
-    <main className="w-full h-full py-10 flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/backgrounds/bg2.png')]">
+    <main
+      id="recommended"
+      className="w-full h-full py-10 flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/backgrounds/bg2.png')]"
+    >
       <motion.div
         initial={{ opacity: 0, x: 100, scale: 0 }}
         whileInView={{ opacity: 1, x: 0, scale: 1 }}

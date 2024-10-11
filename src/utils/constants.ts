@@ -27,23 +27,26 @@ interface IRecomendations {
 
 export class Constants {
   static readonly MENU: IMenu[] = [
-    { link: "#", label: "home" },
-    { link: "#", label: "workflow" },
-    { link: "#", label: "portfolio" },
-    { link: "#", label: "recomendações" },
+    { link: "#home", label: "home" },
+    { link: "#workflow", label: "workflow" },
+    { link: "#portfolio", label: "portfolio" },
+    { link: "#recommended", label: "recomendações" },
   ];
 
   static readonly SOCIAL: IMenu[] = [
-    { link: "#", label: "linkedin" },
-    { link: "#", label: "github" },
-    { link: "#", label: "behance" },
-    { link: "#", label: "dribbble" },
+    {
+      link: "https://www.linkedin.com/in/gabrielsouzacastro/",
+      label: "linkedin",
+    },
+    { link: "https://github.com/gabrcastro", label: "github" },
+    { link: "https://www.behance.net/gabrielsouzac9", label: "behance" },
+    { link: "https://dribbble.com/gabrcastro", label: "dribbble" },
   ];
 
   static readonly COUNTERS: ICounters[] = [
-    { amount: "3+", label: "experiência" },
-    { amount: "10+", label: "projetos" },
-    { amount: "10+", label: "designs" },
+    { amount: "+3", label: "experiência" },
+    { amount: "+10", label: "projetos" },
+    // { amount: "10+", label: "designs" },
   ];
 
   static readonly FLOWSUXUI: IFlow[] = [
@@ -124,13 +127,13 @@ export class Constants {
       image: "",
     },
     {
-      url: "/",
+      url: "/1",
       title: "EcoWaves",
       thumb: "/images/projects/ecowaves.png",
       image: "/images/projects/site/ecowaves.site.png",
     },
     {
-      url: "/",
+      url: "/2",
       title: "Planner",
       thumb: "/images/projects/planner.png",
       image: "",
@@ -179,6 +182,10 @@ export class Constants {
       link: "https://amzn.to/4dlnDfz",
     },
   ];
+
+  static readonly GREETINGS = "I'm programmer";
+  static readonly SUB_GREETINGS =
+    "A freelancer UX/UI designer and FullStack Developer. Based in Brazil.";
 
   static readonly FIRSTNAME = "gabriel";
   static readonly LASTNAME = "castro";

@@ -1,17 +1,16 @@
 import { Constants } from "@/utils/constants";
-import Image from "next/image";
 import * as motion from "framer-motion/client";
 import { NextFont } from "next/dist/compiled/@next/font";
-import { CiLinkedin, CiMenuBurger } from "react-icons/ci";
+import { FaBehance, FaGithub, FaLinkedin } from "react-icons/fa6";
 import {
-  FaArrowDown,
-  FaArrowDown19,
-  FaBehance,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa6";
-import { AiOutlineArrowDown, AiOutlineMenu } from "react-icons/ai";
-import { FiMenu } from "react-icons/fi";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import { CgMenuRight } from "react-icons/cg";
 
 export function HomePage(props: { font: NextFont }) {
@@ -48,12 +47,22 @@ export function HomePage(props: { font: NextFont }) {
           ))}
         </ul> */}
 
-        <button
+        {/* <button
           type="button"
           className="text-gray-900 uppercase text-4xl py-1 px-3 hover:opacity-80 hover:cursor-pointer"
         >
           <CgMenuRight />
-        </button>
+        </button> */}
+        <DropdownMenu>
+          <DropdownMenuTrigger className="text-gray-900 uppercase text-4xl py-1 px-3 hover:opacity-80 hover:cursor-pointer">
+            <CgMenuRight />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>English</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Portuguese</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </motion.div>
 
       {/* NAME */}

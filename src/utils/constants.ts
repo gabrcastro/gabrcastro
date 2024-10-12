@@ -63,6 +63,13 @@ export class Constants {
 
   static readonly DEV_PROJECTS: IProjects[] = [
     {
+      url: "/01",
+      title: "Mobile",
+      thumb: "/images/projects/taskbit.png",
+      image: "/images/projects/site/taskbit.site.png",
+      light: true,
+    },
+    {
       url: "/0",
       title: "UI",
       thumb: "/images/projects/medchek.png",

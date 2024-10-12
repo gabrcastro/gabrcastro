@@ -6,6 +6,7 @@ import { Constants } from "@/utils/constants";
 import { NextFont } from "next/dist/compiled/@next/font";
 import * as motion from "framer-motion/client";
 import { PortolioPage } from "./pages/portfolio.page";
+import { RecomendationsPage } from "./pages/recomendation.page";
 
 export default function Application(props: { lastica: NextFont }) {
   const lastica = props.lastica;
@@ -51,7 +52,7 @@ export default function Application(props: { lastica: NextFont }) {
       <PortolioPage font={lastica} />
 
       {/* RECOMENDATION */}
-      {/* <RecomendationsPage font={lastica} /> */}
+      <RecomendationsPage font={lastica} />
 
       {/* RECOMENDATION */}
       <footer className="p-10 w-full bg-zinc-100 flex items-center justify-between">

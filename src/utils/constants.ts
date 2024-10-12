@@ -19,10 +19,16 @@ interface IProjects {
   title: string;
   thumb: string;
   image: string;
+  light?: boolean;
 }
 interface IRecomendations {
   title: string;
   link: string;
+}
+
+interface IWhatIDo {
+  index: string;
+  description: string;
 }
 
 export class Constants {
@@ -31,6 +37,13 @@ export class Constants {
     { link: "#workflow", label: "workflow" },
     { link: "#portfolio", label: "portfolio" },
     { link: "#recommended", label: "recomendações" },
+  ];
+
+  static readonly WHATIDO: IWhatIDo[] = [
+    { index: "01", description: "Web Development" },
+    { index: "02", description: "Mobile Development" },
+    { index: "03", description: "UX/UI Design" },
+    { index: "04", description: "Social Media" },
   ];
 
   static readonly SOCIAL: IMenu[] = [
@@ -46,97 +59,41 @@ export class Constants {
   static readonly COUNTERS: ICounters[] = [
     { amount: "+3", label: "experiência" },
     { amount: "+10", label: "projetos" },
-    // { amount: "10+", label: "designs" },
-  ];
-
-  static readonly FLOWSUXUI: IFlow[] = [
-    {
-      index: "01",
-      label: "definição",
-      describe:
-        "Definição de objetivo e escopo do projeto. Entendimento do problema que o novo produto deve resolver. Também será levantado os requisitos do projeto.",
-    },
-    {
-      index: "02",
-      label: "pesquisa",
-      describe:
-        "Após compreender o problema vamos estudar o público alvo e observar como os concorrentes resolvem problemas semelhantes. Tirar insights em cima dos dados levantados.",
-    },
-    {
-      index: "03",
-      label: "rascunho",
-      describe:
-        "Prototipação simples, utilizando papel e caneta para verificar as ideias.",
-    },
-    {
-      index: "04",
-      label: "prototipação",
-      describe:
-        "Converter do protótipo simples para um protótipo já implementando visual e funcionalidades finais.",
-    },
-    {
-      index: "05",
-      label: "testes",
-      describe:
-        "Nesta etapa é compartilhado com o time para capturar feedbacks e ideias que podem ser incluídas no protótipo. Após as novas mudanças, retorna para os testes.",
-    },
-    {
-      index: "06",
-      label: "entrega",
-      describe: "É entregue todo o projeto finalizado e testado.",
-    },
-  ];
-
-  static readonly FLOWSDEV: IFlow[] = [
-    {
-      index: "01",
-      label: "requisitos",
-      describe:
-        "Levantamaneto de requisitos durante uma conversa e com o design de interface.",
-    },
-    {
-      index: "02",
-      label: "documentar",
-      describe:
-        "Desenvolver a documentação da aplicação seguindo os requisitos.",
-    },
-    {
-      index: "03",
-      label: "desenvolvimento",
-      describe:
-        "Inicia o desenvolvimento do produto seguindo seguindo o design da interface e os requisitos levantados.",
-    },
-    {
-      index: "04",
-      label: "testes",
-      describe:
-        "Após o desenvolvimento deve ser realizado os testes com o time para verificar o que precisa ser corrigido ou funcionalidades que não foram identificadas anteriormente.",
-    },
-    {
-      index: "05",
-      label: "implantação",
-      describe: "Aqui é a finalização, onde é colocado o projeto em produção.",
-    },
   ];
 
   static readonly DEV_PROJECTS: IProjects[] = [
     {
-      url: "/",
-      title: "Mopox - Pomodoro & Tasks",
-      thumb: "/images/projects/mopox.png",
-      image: "",
+      url: "/0",
+      title: "UI",
+      thumb: "/images/projects/medchek.png",
+      image: "/images/projects/site/medchek.site.png",
+      light: true,
     },
     {
       url: "/1",
-      title: "EcoWaves",
-      thumb: "/images/projects/ecowaves.png",
-      image: "/images/projects/site/ecowaves.site.png",
+      title: "Website",
+      thumb: "/images/projects/mopox.png",
+      image: "/images/projects/site/mopox.site.png",
     },
     {
-      url: "/2",
-      title: "Planner",
-      thumb: "/images/projects/planner.png",
-      image: "",
+      url: "/11",
+      title: "Website",
+      thumb: "/images/projects/ecowaves.png",
+      image: "/images/projects/site/ecowaves.site.png",
+      light: true,
+    },
+    {
+      url: "/111",
+      title: "Website",
+      thumb: "/images/projects/lms.png",
+      image: "/images/projects/site/lms.site.png",
+      light: true,
+    },
+    {
+      url: "/1111",
+      title: "Website",
+      thumb: "/images/projects/rick.png",
+      image: "/images/projects/site/rick.site.png",
     },
   ];
 

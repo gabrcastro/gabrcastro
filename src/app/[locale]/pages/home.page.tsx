@@ -14,6 +14,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { CgDribbble, CgMenuRight } from "react-icons/cg";
 import * as texts from "@/utils/texts.json";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export function HomePage(props: { font: NextFont }) {
   const lastica = props.font;
@@ -46,9 +47,13 @@ export function HomePage(props: { font: NextFont }) {
             <CgMenuRight />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="mr-14">
-            <DropdownMenuItem>{t("en")}</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={"/en"}>{t("en")}</Link>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>{t("pt")}</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={"/pt"}>{t("pt")}</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </motion.div>

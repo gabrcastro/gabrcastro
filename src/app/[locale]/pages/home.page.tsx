@@ -13,9 +13,12 @@ import {
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { CgDribbble, CgMenuRight } from "react-icons/cg";
 import * as texts from "@/utils/texts.json";
+import { useTranslations } from "next-intl";
 
 export function HomePage(props: { font: NextFont }) {
   const lastica = props.font;
+  const t = useTranslations("home");
+
   return (
     <div id="home" className="relative w-full h-full flex flex-col">
       {/* <iframe
@@ -35,7 +38,7 @@ export function HomePage(props: { font: NextFont }) {
           href="/"
           className="text-gray-950 font-semibold text-base md:text-lg"
         >
-          I&apos;m Gabriel
+          {t("logo")}
         </a>
 
         <DropdownMenu>
@@ -43,9 +46,9 @@ export function HomePage(props: { font: NextFont }) {
             <CgMenuRight />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="mr-14">
-            <DropdownMenuItem>English</DropdownMenuItem>
+            <DropdownMenuItem>{t("en")}</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Portuguese</DropdownMenuItem>
+            <DropdownMenuItem>{t("pt")}</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </motion.div>
@@ -64,21 +67,21 @@ export function HomePage(props: { font: NextFont }) {
             className="w-full text-center md:text-start text-gray-950 text-2xl md:text-3xl lg:text-4xl uppercase"
             style={{ fontFamily: lastica.style.fontFamily }}
           >
-            {Constants.GREETINGS}
+            {t("title")}
           </span>
 
           <div className="h-[1px] w-[80%] md:w-full  bg-zinc-500 mt-5" />
 
           <div className="w-[80%] md:w-full flex flex-col items-center md:items-end justify-center mt-4">
             <span className="text-gray-950 text-base text-center md:text-end uppercase">
-              {Constants.SUB_GREETINGS}
+              {t("subtitle")}
             </span>
           </div>
         </div>
 
         <div className="w-full md:w-[70%] flex flex-col items-center md:items-start justify-center mt-20">
           <p className="text-gray-950 text-base md:text-lg font-semibold uppercase mb-4">
-            Let&apos;s work together
+            {t("workTitle")}
           </p>
           <p className="text-gray-950 text-base md:text-lg  mb-2">
             gabrielcastromail@gmail.com
@@ -111,11 +114,49 @@ export function HomePage(props: { font: NextFont }) {
         </div>
         <div className="w-[70%] hidden md:flex justify-end items-end -mt-5">
           <span className="flex items-center gap-3 text-end text-gray-950 text-xs md:text-base mb-2">
-            Scroll down
+            {t("scrolldown")}
             <AiOutlineArrowDown className="font-extralight" />
           </span>
         </div>
       </motion.div>
+
+      {/* RESUME */}
+      <div className="w-full flex flex-row items-center justify-center md:justify-end mt-24 gap-10 md:gap-20 bg-zinc-500/5 py-14 px-10 md:px-20">
+        <motion.div
+          initial={{ opacity: 0, x: 100, scale: 0.5 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: 100, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className=" flex flex-row items-center justify-start"
+        >
+          <span
+            className="text-gray-950 text-2xl md:text-3xl mr-5"
+            style={{ fontFamily: lastica.style.fontFamily }}
+          >
+            {t("experience.amount")}
+          </span>
+          <span className="text-gray-950 text-lg md:text-xl uppercase">
+            {t("experience.label")}
+          </span>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100, scale: 0.5 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: 100, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className=" flex flex-row items-center justify-start"
+        >
+          <span
+            className="text-gray-950 text-2xl md:text-3xl mr-5"
+            style={{ fontFamily: lastica.style.fontFamily }}
+          >
+            {t("projects.amount")}
+          </span>
+          <span className="text-gray-950 text-lg md:text-xl uppercase">
+            {t("projects.label")}
+          </span>
+        </motion.div>
+      </div>
     </div>
   );
 }

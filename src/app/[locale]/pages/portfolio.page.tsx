@@ -20,10 +20,11 @@ import {
 import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
+import { useTranslations } from "next-intl";
 
 export function PortolioPage(props: { font: NextFont }) {
   const lastica = props.font;
-
+  const t = useTranslations("portfolio");
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
@@ -39,7 +40,7 @@ export function PortolioPage(props: { font: NextFont }) {
         className="w-full flex flex-col p-14 "
       >
         <span className="w-full text-center md:text-start text-zinc-900 text-2xl font-semibold uppercase mb-7">
-          LATEST PROJECTS
+          {t("title")}
         </span>
       </motion.div>
 

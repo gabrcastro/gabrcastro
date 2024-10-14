@@ -1,10 +1,23 @@
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 import * as motion from "framer-motion/client";
-import { Constants } from "@/utils/constants";
+import { useTranslations } from "next-intl";
+import i18n from "@/i18n";
 
 export function RecomendationsPage(props: { font: NextFont }) {
   const lastica = props.font;
+  const t = useTranslations("recommendations");
+  const t2 = useTranslations("recommendations.books");
+  const books = [
+    "book1",
+    "book2",
+    "book3",
+    "book4",
+    "book5",
+    "book6",
+    "book7",
+    "book8",
+  ] as const;
   return (
     <div
       id="portfolio"
@@ -18,22 +31,26 @@ export function RecomendationsPage(props: { font: NextFont }) {
         className="w-full flex flex-col items-start justify-start p-0 md:p-14"
       >
         <span className="text-zinc-900 text-2xl w-full text-center md:text-start font-semibold uppercase mb-7 mt-10 md:mt-5">
-          {Constants.RECOMENDATIONS}
+          {t("title")}
         </span>
 
         <div className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-between mt-10">
           <div className="flex flex-col w-[90%] lg:w-[50%] items-center lg:items-start justify-start py-10 ml-0 md:ml-10">
             <span className="text-zinc-950 text-xl mb-10 uppercase">
-              {Constants.BOOKS}
+              {t("booksTitle")}
             </span>
             <div className="flex flex-col items-center lg:items-start gap-8">
-              {Constants.RECOMEND_LINKS.map((item) => (
+              {books.map((book, index) => (
                 <span
-                  key={item.link}
+                  key={index}
                   className="hover:opacity-65 uppercase text-center lg:text-start"
                 >
-                  <a href={item.link} className="text-zinc-950 text-sm ">
-                    {item.title}
+                  <a
+                    href={t2(`${book}.link`)}
+                    rel="noopener noreferrer"
+                    className="text-zinc-950 text-sm "
+                  >
+                    {t2(`${book}.title`)}
                   </a>
                 </span>
               ))}

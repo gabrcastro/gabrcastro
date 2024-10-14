@@ -12,36 +12,9 @@ export default function Application(props: { lastica: NextFont }) {
   const lastica = props.lastica;
 
   return (
-    <main
-      lang="en"
-      className="overflow-x-hidden overflow-y-auto  bg-center bg-cover bg-no-repeat bg-[url('/backgrounds/bg.png')]"
-    >
+    <main className="overflow-x-hidden overflow-y-auto  bg-center bg-cover bg-no-repeat bg-[url('/backgrounds/bg.png')]">
       {/* HOME PAGE */}
       <HomePage font={lastica} />
-
-      {/* RESUME */}
-      <div className="w-full flex flex-row items-center justify-center md:justify-end mt-24 gap-10 md:gap-20 bg-zinc-500/5 py-14 px-10 md:px-20">
-        {Constants.COUNTERS.map((item) => (
-          <motion.div
-            initial={{ opacity: 0, x: 100, scale: 0.5 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 100, scale: 0.5 }}
-            transition={{ duration: 0.5 }}
-            key={item.label}
-            className=" flex flex-row items-center justify-start"
-          >
-            <span
-              className="text-gray-950 text-2xl md:text-3xl mr-5"
-              style={{ fontFamily: lastica.style.fontFamily }}
-            >
-              {item.amount}
-            </span>
-            <span className="text-gray-950 text-lg md:text-xl uppercase">
-              {item.label}
-            </span>
-          </motion.div>
-        ))}
-      </div>
 
       {/*PROFILE*/}
       <ProfilePage font={lastica} />

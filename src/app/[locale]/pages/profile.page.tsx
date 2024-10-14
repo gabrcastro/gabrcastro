@@ -1,10 +1,12 @@
 import { Constants } from "@/utils/constants";
 import * as motion from "framer-motion/client";
+import { useTranslations } from "next-intl";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 
 export function ProfilePage(props: { font: NextFont }) {
   const lastica = props.font;
+  const t = useTranslations("about");
   return (
     <div className="flex flex-col w-full">
       <div className="w-full h-full flex flex-col md:flex-row items-center justify-center gap-5">
@@ -16,23 +18,10 @@ export function ProfilePage(props: { font: NextFont }) {
           className="w-[90%] md:w-[70%] lg:w-[40%] flex flex-col items-center md:items-start text-center md:text-start justify-between p-14"
         >
           <span className="text-zinc-900 text-2xl font-semibold uppercase mb-7">
-            ABOUT ME
+            {t("title")}
           </span>
-          <span className="text-zinc-900 text-base">
-            I am a passionate programmer, focused on creating innovative digital
-            solutions for web and mobile development. I enjoy facing new
-            challenges and constantly improving my skills to stay up-to-date
-            with market trends. My goal is to develop products that positively
-            impact people&apos;s lives.
-          </span>
-          <span className="text-zinc-900 text-base mt-10">
-            With +3 years of experience, I specialize in working with web
-            development, specifically Typescript, React.js. I have also
-            developed mobile solutions using Flutter. Recently I&apos;ve been
-            recently gaining experience in Back-End development with C# and
-            .NET. I also work in interface design development. From mobile and
-            web application interfaces.
-          </span>
+          <span className="text-zinc-900 text-base">{t("textOne")}</span>
+          <span className="text-zinc-900 text-base mt-10">{t("textTwo")}</span>
         </motion.div>
 
         <motion.div className="w-[80%] md:w-[60%] lg:w-[30%] flex flex-col items-item justify-center p-14 -mt-20 md:mt-32">

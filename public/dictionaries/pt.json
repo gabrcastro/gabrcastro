@@ -1,0 +1,69 @@
+{
+  "home": {
+    "logo": "I'm Gabriel",
+    "pt": "Português",
+    "en": "Inglês",
+    "title": "I'm Programmer",
+    "subtitle": "A freelancer UX/UI designer and FullStack Developer. Based in Brazil.",
+    "workTitle": "Vamos trabalhar juntos",
+    "scrolldown": "Role para baixo",
+    "experience": {
+      "amount": "+3",
+      "label": "Experiência"
+    },
+    "projects": {
+      "amount": "+10",
+      "label": "Projetos"
+    }
+  },
+  "about": {
+    "title": "Sobre",
+    "textOne": "Sou um programador apaixonado, focado na criação de soluções digitais inovadoras para o desenvolvimento da web e móveis.Gosto de enfrentar novos desafios e melhorar constantemente minhas habilidades para manter-se atualizado com as tendências do mercado.Meu objetivo é desenvolver produtos que impactem positivamente a vida das pessoas.",
+    "textTwo": "Com +3 anos de experiência, eu me especializo em trabalhar com o desenvolvimento da Web, especificamente TypeScript, React.js.Eu também desenvolvi soluções móveis usando o Flutter.Recentemente, tenho recebido experiência recentemente no desenvolvimento de back-end com C# e .NET.Eu também trabalho no desenvolvimento do design de interface.De interfaces de aplicativos móveis e web.",
+    "webDesign": "Web Design",
+    "mobileDevelopment": "Mobile Development",
+    "uiuxDesign": "UI/UX Design",
+    "socialMedia": "Social Media"
+  },
+  "portfolio": {
+    "title": "Últimos projetos"
+  },
+  "recommendations": {
+    "title": "Recomendações",
+    "booksTitle": "Livros",
+    "books": {
+      "book1": {
+        "title": "Código Limpo: Habilidades práticas do Agile Software",
+        "link": "https://amzn.to/4dlC6rJ"
+      },
+      "book2": {
+        "title": "O Programador Pragmático: De Aprendiz a Mestre",
+        "link": "https://amzn.to/4calt17"
+      },
+      "book3": {
+        "title": "Não me faça pensar",
+        "link": "https://amzn.to/3SrfkXz"
+      },
+      "book4": {
+        "title": "Use a Cabeça!: Padrões de Projeto",
+        "link": "https://amzn.to/46oFNuy"
+      },
+      "book5": {
+        "title": "Pai rico, Pai pobre",
+        "link": "https://amzn.to/4c3Kz1K"
+      },
+      "book6": {
+        "title": "O poder do hábito",
+        "link": "https://amzn.to/3WH27w5"
+      },
+      "book7": {
+        "title": "Quem pensa enriquece",
+        "link": "https://amzn.to/3Wo4suO"
+      },
+      "book8": {
+        "title": "A Arte da Guerra",
+        "link": "https://amzn.to/4dlnDfz"
+      }
+    }
+  }
+}

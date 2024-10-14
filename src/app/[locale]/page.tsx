@@ -1,16 +1,13 @@
-"use client";
-
 import { HomePage } from "./pages/home.page";
 import { ProfilePage } from "./pages/profile.page";
 import { Constants } from "@/utils/constants";
-import { NextFont } from "next/dist/compiled/@next/font";
-import * as motion from "framer-motion/client";
 import { PortolioPage } from "./pages/portfolio.page";
 import { RecomendationsPage } from "./pages/recomendation.page";
+import localFont from "next/font/local";
 
-export default function Application(props: { lastica: NextFont }) {
-  const lastica = props.lastica;
+const lastica = localFont({ src: "../../../public/fonts/lastica.ttf" });
 
+export default function Application() {
   return (
     <main className="overflow-x-hidden overflow-y-auto  bg-center bg-cover bg-no-repeat bg-[url('/backgrounds/bg.png')]">
       {/* HOME PAGE */}
@@ -48,13 +45,13 @@ export default function Application(props: { lastica: NextFont }) {
           </ul> */}
 
           <ul className="hidden md:flex flex-row gap-10 text-gray-950 text-xs uppercase ml-20">
-            {Constants.SOCIAL.map((item) => (
-              <li key={item.link}>
+            {Constants.SOCIAL.map((social, index) => (
+              <li key={index}>
                 <a
-                  href={item.link}
+                  href={social.url}
                   className="hover:opacity-80 hover:cursor-pointer"
                 >
-                  {item.label}
+                  {social.title}
                 </a>
               </li>
             ))}

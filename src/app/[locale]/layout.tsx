@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   description: "Gabriel Castro Dev",
 };
 
-const lastica = localFont({ src: "../../../public/fonts/lastica.ttf" });
 const quicksand = Quicksand({ subsets: ["latin"], weight: "400" });
 
 export default async function RootLayout({
@@ -36,7 +35,7 @@ export default async function RootLayout({
     >
       <body className={`${quicksand.className} h-screen w-screen`}>
         <NextIntlClientProvider messages={messages}>
-          <Application lastica={lastica} />
+          <Application />
         </NextIntlClientProvider>
         <Analytics />
       </body>

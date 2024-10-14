@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { CgDribbble, CgMenuRight } from "react-icons/cg";
-import * as texts from "@/utils/texts.json";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -95,9 +94,9 @@ export function HomePage(props: { font: NextFont }) {
             +55 74 9 8859 1670
           </p>
           <div className="flex flex-row gap-5 items-center justify-start text-zinc-700 mt-5 z-10">
-            {texts.social.map((social) => (
+            {Constants.SOCIAL.map((social, index) => (
               <a
-                key={social.url}
+                key={index}
                 href={social.url}
                 target="_blank"
                 className={

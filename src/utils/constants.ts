@@ -3,6 +3,11 @@ interface IMenu {
   label: string;
 }
 
+interface ISocial {
+  url: string;
+  title: string;
+}
+
 interface ICounters {
   amount: string;
   label: string;
@@ -46,14 +51,14 @@ export class Constants {
     { index: "04", description: "Social Media" },
   ];
 
-  static readonly SOCIAL: IMenu[] = [
+  static readonly SOCIAL: ISocial[] = [
     {
-      link: "https://www.linkedin.com/in/gabrielsouzacastro/",
-      label: "linkedin",
+      url: "https://www.linkedin.com/in/gabrielsouzacastro/",
+      title: "linkedin",
     },
-    { link: "https://github.com/gabrcastro", label: "github" },
-    { link: "https://www.behance.net/gabrielsouzac9", label: "behance" },
-    { link: "https://dribbble.com/gabrcastro", label: "dribbble" },
+    { url: "https://github.com/gabrcastro", title: "github" },
+    { url: "https://www.behance.net/gabrielsouzac9", title: "behance" },
+    { url: "https://dribbble.com/gabrcastro", title: "dribbble" },
   ];
 
   static readonly COUNTERS: ICounters[] = [

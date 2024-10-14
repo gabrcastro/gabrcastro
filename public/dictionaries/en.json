@@ -1,0 +1,69 @@
+{
+  "home": {
+    "logo": "I'm Gabriel",
+    "pt": "Portuguese",
+    "en": "English",
+    "title": "I'm Programmer",
+    "subtitle": "A freelancer UX/UI designer and FullStack Developer. Based in Brazil.",
+    "workTitle": "Let's work together",
+    "scrolldown": "Scrolldown",
+    "experience": {
+      "amount": "+3",
+      "label": "Experience"
+    },
+    "projects": {
+      "amount": "+10",
+      "label": "Projects"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "textOne": "I am a passionate programmer, focused on creating innovative digital solutions for web and mobile development. I enjoy facing new challenges and constantly improving my skills to stay up-to-date with market trends. My goal is to develop products that positively impact people's lives.",
+    "textTwo": "With +3 years of experience, I specialize in working with web development, specifically Typescript, React.js. I have also developed mobile solutions using Flutter. Recently I've been recently gaining experience in Back-End development with C# and .NET. I also work in interface design development. From mobile and web application interfaces.",
+    "webDesign": "Web Design",
+    "mobileDevelopment": "Mobile Development",
+    "uiuxDesign": "UI/UX Design",
+    "socialMedia": "Social Media"
+  },
+  "portfolio": {
+    "title": "Latest Projects"
+  },
+  "recommendations": {
+    "title": "Recommendations",
+    "booksTitle": "Books",
+    "books": {
+      "book1": {
+        "title": "Clean Code: Practical Agile Software Skills",
+        "link": "https://amzn.to/4dlC6rJ"
+      },
+      "book2": {
+        "title": "The Pragmatic Programmer: From Apprentice to Master",
+        "link": "https://amzn.to/4calt17"
+      },
+      "book3": {
+        "title": "Don't make me think",
+        "link": "https://amzn.to/3SrfkXz"
+      },
+      "book4": {
+        "title": "Use your head!: Project standards",
+        "link": "https://amzn.to/46oFNuy"
+      },
+      "book5": {
+        "title": "Rich father, poor father",
+        "link": "https://amzn.to/4c3Kz1K"
+      },
+      "book6": {
+        "title": "The power of habit",
+        "link": "https://amzn.to/3WH27w5"
+      },
+      "book7": {
+        "title": "Who thinks enriches",
+        "link": "https://amzn.to/3Wo4suO"
+      },
+      "book8": {
+        "title": "The Art of War",
+        "link": "https://amzn.to/4dlnDfz"
+      }
+    }
+  }
+}

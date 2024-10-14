@@ -36,36 +36,25 @@ export function PortolioPage(props: { font: NextFont }) {
         whileInView={{ opacity: 1, x: 0, scale: 1 }}
         exit={{ opacity: 0, x: 100, scale: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full flex flex-col p-14"
+        className="w-full flex flex-col p-14 "
       >
-        <span className="text-zinc-900 text-3xl font-semibold uppercase mb-7">
+        <span className="w-full text-center md:text-start text-zinc-900 text-2xl font-semibold uppercase mb-7">
           LATEST PROJECTS
         </span>
-
-        <ul className="w-full flex gap-10 items-center justify-start text-zinc-900 text-lg uppercase my-5">
-          <li className="hover:font-bold hover:cursor-pointer font-bold">
-            {Constants.ALL}
-          </li>
-          <li className="hover:font-bold hover:cursor-pointer">
-            {Constants.PROGRAMATION}
-          </li>
-          <li className="hover:font-bold hover:cursor-pointer">
-            {Constants.UX_UI}
-          </li>
-        </ul>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 100, scale: 0 }}
+        initial={{ opacity: 0, y: 10, scale: 0.7 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 100, scale: 0 }}
+        exit={{ opacity: 0, y: 10, scale: 0.7 }}
         transition={{ duration: 0.5 }}
-        className="w-full flex flex-row flex-wrap items-start justify-between gap-10 pt-5 pb-32 px-32 "
+        viewport={{ once: true, amount: 0.2 }}
+        className="w-full flex flex-row flex-wrap items-start justify-between gap-10 pt-5 pb-32 px-10 lg:px-32 "
       >
         {Constants.DEV_PROJECTS.map((item) => (
           <div
             key={item.url}
-            className={`w-[30%] min-h-[300px] rounded-3xl  hover:cursor-pointer hover:brightness-75 relative bg-cover bg-no-repeat bg-center`}
+            className={`w-full md:w-[44%] lg:w-[30%] min-h-[250px] rounded-3xl  hover:cursor-pointer hover:brightness-75 relative bg-cover bg-no-repeat bg-center`}
             style={{ backgroundImage: `url(${item.thumb})` }}
             onMouseEnter={() => setHoveredItem(item.url)}
             onMouseLeave={() => setHoveredItem(null)}
@@ -74,7 +63,7 @@ export function PortolioPage(props: { font: NextFont }) {
               <div
                 className={`absolute bottom-0 left-0 ${
                   item.light ? "text-zinc-950" : "text-white"
-                } text-xl ml-5 mb-5 font-medium z-20`}
+                } text-lg ml-5 mb-5 font-medium z-20`}
               >
                 {item.title}
               </div>
@@ -86,7 +75,7 @@ export function PortolioPage(props: { font: NextFont }) {
                 <AlertDialogTrigger className="text-white bg-zinc-900 text-4xl rounded-full p-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                   <GoArrowUpRight />
                 </AlertDialogTrigger>
-                <AlertDialogContent className="p-0 w-full min-w-[1080px] max-h-[700px] overflow-auto bg-zinc-900 border-none">
+                <AlertDialogContent className="p-0 w-[90%] lg:w-full min-w-0 lg:min-w-[1080px] max-h-[700px] overflow-auto bg-zinc-900 border-none">
                   <AlertDialogHeader className="absolute w-full mt-7 p-5 flex items-end justify-end">
                     <AlertDialogCancel className="absolute top-0 right-0 mt-10 mr-5 text-xl text-zinc-950 font-semibold rounded-full bg-white">
                       <AiOutlineClose />

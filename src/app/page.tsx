@@ -20,7 +20,7 @@ export default function Application(props: { lastica: NextFont }) {
       <HomePage font={lastica} />
 
       {/* RESUME */}
-      <div className="flex flex-row w-full items-center justify-end mt-24 gap-20 bg-zinc-500/5 py-14 px-20">
+      <div className="w-full flex flex-row items-center justify-center md:justify-end mt-24 gap-10 md:gap-20 bg-zinc-500/5 py-14 px-10 md:px-20">
         {Constants.COUNTERS.map((item) => (
           <motion.div
             initial={{ opacity: 0, x: 100, scale: 0.5 }}
@@ -28,15 +28,15 @@ export default function Application(props: { lastica: NextFont }) {
             exit={{ opacity: 0, x: 100, scale: 0.5 }}
             transition={{ duration: 0.5 }}
             key={item.label}
-            className="flex flex-row items-center justify-start"
+            className=" flex flex-row items-center justify-start"
           >
             <span
-              className="text-gray-950 text-4xl mr-5"
+              className="text-gray-950 text-2xl md:text-3xl mr-5"
               style={{ fontFamily: lastica.style.fontFamily }}
             >
               {item.amount}
             </span>
-            <span className="text-gray-950 text-2xl uppercase">
+            <span className="text-gray-950 text-lg md:text-xl uppercase">
               {item.label}
             </span>
           </motion.div>
@@ -56,12 +56,12 @@ export default function Application(props: { lastica: NextFont }) {
 
       {/* RECOMENDATION */}
       <footer className="p-10 w-full bg-zinc-100 flex items-center justify-between">
-        <a href="/" className="text-gray-950 font-semibold text-2xl">
+        <a href="/" className="text-gray-950 font-semibold text-xs md:text-lg">
           I&apos;m Gabriel
         </a>
 
         <div className="flex items-center justify-between gap-3">
-          <ul className="flex flex-row gap-10 text-gray-950 text-base uppercase ml-20">
+          {/* <ul className="flex flex-row gap-10 text-gray-950 text-xs uppercase ml-20">
             {Constants.MENU.map((item) => (
               <li key={item.link}>
                 <a
@@ -72,9 +72,9 @@ export default function Application(props: { lastica: NextFont }) {
                 </a>
               </li>
             ))}
-          </ul>
+          </ul> */}
 
-          <ul className="border-l-[1px] border-l-gray-950/40 pl-20 flex flex-row gap-10 text-gray-950 text-base uppercase ml-20">
+          <ul className="hidden md:flex flex-row gap-10 text-gray-950 text-xs uppercase ml-20">
             {Constants.SOCIAL.map((item) => (
               <li key={item.link}>
                 <a
@@ -88,7 +88,7 @@ export default function Application(props: { lastica: NextFont }) {
           </ul>
         </div>
 
-        <span className="text-gray-950 text-lg ml-20 uppercase">
+        <span className="text-gray-950 text-xs ml-20 uppercase">
           Gabriel Castro {new Date().getFullYear().toString()}
         </span>
       </footer>

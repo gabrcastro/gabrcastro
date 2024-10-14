@@ -63,44 +63,44 @@ export class Constants {
 
   static readonly DEV_PROJECTS: IProjects[] = [
     {
+      url: "/000",
+      title: "Website",
+      thumb: "/images/projects/finara.png",
+      image: "/images/projects/design/finara.design.png",
+    },
+    {
       url: "/01",
       title: "Mobile",
       thumb: "/images/projects/taskbit.png",
-      image: "/images/projects/site/taskbit.site.png",
+      image: "/images/projects/design/taskbit.design.png",
       light: true,
     },
     {
       url: "/0",
       title: "UI",
-      thumb: "/images/projects/medchek.png",
-      image: "/images/projects/site/medchek.site.png",
+      thumb: "/images/projects/medcheck.png",
+      image: "/images/projects/design/medcheck.design.png",
       light: true,
     },
     {
       url: "/1",
       title: "Website",
       thumb: "/images/projects/mopox.png",
-      image: "/images/projects/site/mopox.site.png",
+      image: "/images/projects/design/mopox.design.png",
     },
     {
       url: "/11",
       title: "Website",
       thumb: "/images/projects/ecowaves.png",
-      image: "/images/projects/site/ecowaves.site.png",
+      image: "/images/projects/design/ecowaves.design.png",
       light: true,
     },
     {
       url: "/111",
       title: "Website",
       thumb: "/images/projects/lms.png",
-      image: "/images/projects/site/lms.site.png",
+      image: "/images/projects/design/lms.design.png",
       light: true,
-    },
-    {
-      url: "/1111",
-      title: "Website",
-      thumb: "/images/projects/rick.png",
-      image: "/images/projects/site/rick.site.png",
     },
   ];
 

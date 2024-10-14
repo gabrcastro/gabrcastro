@@ -11,7 +11,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { CgMenuRight } from "react-icons/cg";
+import { CgDribbble, CgMenuRight } from "react-icons/cg";
+import * as texts from "@/utils/texts.json";
 
 export function HomePage(props: { font: NextFont }) {
   const lastica = props.font;
@@ -24,40 +25,24 @@ export function HomePage(props: { font: NextFont }) {
 
       {/* MENU */}
       <motion.div
-        initial={{ opacity: 0, y: 200, scale: 0 }}
+        initial={{ opacity: 0, y: 100, scale: 0.5 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 200, scale: 0 }}
+        exit={{ opacity: 0, y: 100, scale: 0.5 }}
         transition={{ duration: 0.5 }}
         className="w-full flex flex-row justify-between items-center p-10"
       >
-        <a href="/" className="text-gray-950 font-semibold text-2xl">
+        <a
+          href="/"
+          className="text-gray-950 font-semibold text-base md:text-lg"
+        >
           I&apos;m Gabriel
         </a>
 
-        {/* <ul className="flex flex-row gap-10 text-gray-950 text-xl uppercase ml-20">
-          {Constants.MENU.map((item) => (
-            <li key={item.link}>
-              <a
-                href={item.link}
-                className="hover:opacity-80 hover:cursor-pointer"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul> */}
-
-        {/* <button
-          type="button"
-          className="text-gray-900 uppercase text-4xl py-1 px-3 hover:opacity-80 hover:cursor-pointer"
-        >
-          <CgMenuRight />
-        </button> */}
         <DropdownMenu>
-          <DropdownMenuTrigger className="text-gray-900 uppercase text-4xl py-1 px-3 hover:opacity-80 hover:cursor-pointer">
+          <DropdownMenuTrigger className="-mr-5 text-gray-900 uppercase text-2xl py-1 px-3 hover:opacity-80 hover:cursor-pointer">
             <CgMenuRight />
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent className="mr-14">
             <DropdownMenuItem>English</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Portuguese</DropdownMenuItem>
@@ -67,62 +52,65 @@ export function HomePage(props: { font: NextFont }) {
 
       {/* NAME */}
       <motion.div
-        initial={{ opacity: 0, x: -1000, scale: 0.5 }}
+        initial={{ opacity: 0, x: -100, scale: 0.5 }}
         whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        exit={{ opacity: 0, x: -1000, scale: 0.5 }}
+        exit={{ opacity: 0, x: -100, scale: 0.5 }}
         transition={{ duration: 0.5 }}
-        className="ml-48 w-full items-center justify-center mt-48"
+        viewport={{ once: true, amount: 0.2 }}
+        className="ml-0 w-full flex flex-col items-center justify-center mt-20"
       >
-        <div className="flex flex-col w-full items-start justify-center">
+        <div className="w-full md:w-[70%] flex flex-col items-center justify-center">
           <span
-            className="text-gray-950 text-5xl uppercase"
+            className="w-full text-center md:text-start text-gray-950 text-2xl md:text-3xl lg:text-4xl uppercase"
             style={{ fontFamily: lastica.style.fontFamily }}
           >
             {Constants.GREETINGS}
           </span>
 
-          <div className="h-[1px] w-[70%] bg-zinc-500 mt-5" />
+          <div className="h-[1px] w-[80%] md:w-full  bg-zinc-500 mt-5" />
 
-          <div className="w-[70%] flex flex-col items-end justify-center mt-4">
-            <span className="text-gray-950 text-xl uppercase">
+          <div className="w-[80%] md:w-full flex flex-col items-center md:items-end justify-center mt-4">
+            <span className="text-gray-950 text-base text-center md:text-end uppercase">
               {Constants.SUB_GREETINGS}
             </span>
           </div>
         </div>
 
-        <div className="w-[70%] flex flex-col items-start justify-center mt-40">
-          <p className="text-gray-950 text-xl font-semibold uppercase mb-4">
+        <div className="w-full md:w-[70%] flex flex-col items-center md:items-start justify-center mt-20">
+          <p className="text-gray-950 text-base md:text-lg font-semibold uppercase mb-4">
             Let&apos;s work together
           </p>
-          <p className="text-gray-950 text-xl mb-2">
+          <p className="text-gray-950 text-base md:text-lg  mb-2">
             gabrielcastromail@gmail.com
           </p>
-          <p className="text-gray-950 text-xl uppercase mb-2">
+          <p className="text-gray-950 text-base md:text-lg uppercase mb-2">
             +55 74 9 8859 1670
           </p>
-          <div className="flex flex-row gap-5 items-center justify-start text-zinc-700">
-            <a
-              href="/"
-              className="hover:cursor-pointer hover:opacity-80 text-3xl"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="/"
-              className="hover:cursor-pointer hover:opacity-80 text-3xl"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="/"
-              className="hover:cursor-pointer hover:opacity-80 text-4xl"
-            >
-              <FaBehance />
-            </a>
+          <div className="flex flex-row gap-5 items-center justify-start text-zinc-700 mt-5 z-10">
+            {texts.social.map((social) => (
+              <a
+                key={social.url}
+                href={social.url}
+                target="_blank"
+                className={
+                  "hover:cursor-pointer hover:opacity-80 text-2xl block"
+                }
+              >
+                {social.title === "linkedin" ? (
+                  <FaLinkedin />
+                ) : social.title === "github" ? (
+                  <FaGithub />
+                ) : social.title === "behance" ? (
+                  <FaBehance />
+                ) : (
+                  <CgDribbble />
+                )}
+              </a>
+            ))}
           </div>
         </div>
-        <div className="w-[80%] flex justify-end items-end -mt-10">
-          <span className="flex items-center gap-3 text-end text-gray-950 text-xl mb-2">
+        <div className="w-[70%] hidden md:flex justify-end items-end -mt-5">
+          <span className="flex items-center gap-3 text-end text-gray-950 text-xs md:text-base mb-2">
             Scroll down
             <AiOutlineArrowDown className="font-extralight" />
           </span>

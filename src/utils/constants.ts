@@ -68,43 +68,42 @@ export class Constants {
 
   static readonly DEV_PROJECTS: IProjects[] = [
     {
+      url: "/02100",
+      title: "Website",
+      thumb: "/images/projects/calendar.png",
+      image: "/images/projects/design/calendar.design.webp",
+    },
+    {
       url: "/000",
       title: "Website",
       thumb: "/images/projects/finara.png",
-      image: "/images/projects/design/finara.design.png",
+      image: "/images/projects/design/finara.design.webp",
     },
     {
       url: "/01",
       title: "Mobile",
       thumb: "/images/projects/taskbit.png",
-      image: "/images/projects/design/taskbit.design.png",
+      image: "/images/projects/design/taskbit.design.webp",
       light: true,
     },
     {
       url: "/0",
       title: "UI",
       thumb: "/images/projects/medcheck.png",
-      image: "/images/projects/design/medcheck.design.png",
+      image: "/images/projects/design/medcheck.design.webp",
       light: true,
     },
     {
       url: "/1",
       title: "Website",
       thumb: "/images/projects/mopox.png",
-      image: "/images/projects/design/mopox.design.png",
+      image: "/images/projects/design/mopox.design.webp",
     },
     {
       url: "/11",
       title: "Website",
       thumb: "/images/projects/ecowaves.png",
-      image: "/images/projects/design/ecowaves.design.png",
-      light: true,
-    },
-    {
-      url: "/111",
-      title: "Website",
-      thumb: "/images/projects/lms.png",
-      image: "/images/projects/design/lms.design.png",
+      image: "/images/projects/design/ecowaves.design.webp",
       light: true,
     },
   ];

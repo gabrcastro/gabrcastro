@@ -1,3 +1,5 @@
+"use client";
+
 import { Constants } from "@/utils/constants";
 import * as motion from "framer-motion/client";
 import { NextFont } from "next/dist/compiled/@next/font";
@@ -14,6 +16,8 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { CgDribbble, CgMenuRight } from "react-icons/cg";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useAnimation } from "framer-motion";
 
 export function HomePage(props: { font: NextFont }) {
   const lastica = props.font;
@@ -59,27 +63,45 @@ export function HomePage(props: { font: NextFont }) {
 
       {/* NAME */}
       <motion.div
-        initial={{ opacity: 0, x: -100, scale: 0.5 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        exit={{ opacity: 0, x: -100, scale: 0.5 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, x: -100, scale: 0.5, rotate: -10 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+        exit={{ opacity: 0, x: -100, scale: 0.5, rotate: 10 }}
+        transition={{
+          duration: 0.6,
+          type: "spring",
+          stiffness: 100,
+          damping: 10,
+        }}
         viewport={{ once: true, amount: 0.2 }}
         className="ml-0 w-full flex flex-col items-center justify-center mt-20"
       >
         <div className="w-full md:w-[70%] flex flex-col items-center justify-center">
-          <span
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="w-full text-center md:text-start text-gray-950 text-2xl md:text-3xl lg:text-4xl uppercase"
             style={{ fontFamily: lastica.style.fontFamily }}
           >
             {t("title")}
-          </span>
+          </motion.span>
 
-          <div className="h-[1px] w-[80%] md:w-full  bg-zinc-500 mt-5" />
+          <motion.div
+            initial={{ width: "0%" }}
+            whileInView={{ width: "80%" }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="h-[1px] w-[80%] md:w-full bg-zinc-500 mt-5"
+          />
 
           <div className="w-[80%] md:w-full flex flex-col items-center md:items-end justify-center mt-4">
-            <span className="text-gray-950 text-base text-center md:text-end uppercase">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-gray-950 text-base text-center md:text-end uppercase"
+            >
               {t("subtitle")}
-            </span>
+            </motion.span>
           </div>
         </div>
 
@@ -87,7 +109,7 @@ export function HomePage(props: { font: NextFont }) {
           <p className="text-gray-950 text-base md:text-lg font-semibold uppercase mb-4">
             {t("workTitle")}
           </p>
-          <p className="text-gray-950 text-base md:text-lg  mb-2">
+          <p className="text-gray-950 text-base md:text-lg mb-2">
             gabrielcastromail@gmail.com
           </p>
           <p className="text-gray-950 text-base md:text-lg uppercase mb-2">
@@ -95,13 +117,16 @@ export function HomePage(props: { font: NextFont }) {
           </p>
           <div className="flex flex-row gap-5 items-center justify-start text-zinc-700 mt-5 z-10">
             {Constants.SOCIAL.map((social, index) => (
-              <a
+              <motion.a
                 key={index}
                 href={social.url}
                 target="_blank"
                 className={
                   "hover:cursor-pointer hover:opacity-80 text-2xl block"
                 }
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               >
                 {social.title === "linkedin" ? (
                   <FaLinkedin />
@@ -112,15 +137,20 @@ export function HomePage(props: { font: NextFont }) {
                 ) : (
                   <CgDribbble />
                 )}
-              </a>
+              </motion.a>
             ))}
           </div>
         </div>
         <div className="w-[70%] hidden md:flex justify-end items-end -mt-5">
-          <span className="flex items-center gap-3 text-end text-gray-950 text-xs md:text-base mb-2">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex items-center gap-3 text-end text-gray-950 text-xs md:text-base mb-2"
+          >
             {t("scrolldown")}
             <AiOutlineArrowDown className="font-extralight" />
-          </span>
+          </motion.span>
         </div>
       </motion.div>
 
